@@ -1,0 +1,11 @@
+.footer {
+  padding: 60px 0;
+}
+
+.footer__title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 70%;
+}
