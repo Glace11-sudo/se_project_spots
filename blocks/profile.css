@@ -1,8 +1,6 @@
 .profile {
   display: flex;
   justify-content: center;
-  /* max-width: 1280px; */
-  /* margin: 34px auto 20px auto; */
   margin-top: 34px;
   padding: 0 0;
   margin-bottom: 20px;
@@ -81,6 +79,7 @@
     align-items: center;
     text-align: center;
     padding-top: 20px;
+    margin-top: 0;
   }
 
   .profile__avatar {
