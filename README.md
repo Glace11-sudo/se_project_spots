@@ -1,6 +1,6 @@
 # Project 3: Spots
 
-this project is an image sharing site.
+This project is an image sharing site.
 
 ## Description
 
@@ -14,6 +14,6 @@ This project demonstrates responsive design meaning the elemenents displayed wil
 
 ## Deployment
 
-this webpage is deployed to Github Pages.
+This webpage is deployed to Github Pages.
 
 - [Deployment link] (https://glace11-sudo.github.io/se_project_spots/)
