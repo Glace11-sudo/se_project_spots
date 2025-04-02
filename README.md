@@ -17,3 +17,8 @@ This project demonstrates responsive design meaning the elemenents displayed wil
 This webpage is deployed to Github Pages.
 
 - [Deployment link] (https://glace11-sudo.github.io/se_project_spots/)
+
+## video
+
+This is video Breakdown explaining the details of this project.
+https://drive.google.com/file/d/1DXjl92vamuQarhS6DsAx1x_J3p6nq59p/view?usp=sharing
