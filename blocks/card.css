@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12px;
+  margin: 12px 0 0 0;
 }
 
 .card__title {
@@ -21,7 +21,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 350px;
 }
 
 .card__like-btn {
@@ -48,7 +48,7 @@
   }
   .card__title {
     font-size: 16px;
-    min-width: 250px;
+    max-width: 250px;
   }
   .card__like-btn {
     width: 20px;
