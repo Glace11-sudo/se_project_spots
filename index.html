@@ -110,6 +110,61 @@
       <footer class="footer">
         <h2 class="footer__title">2023 © Spots</h2>
       </footer>
+      <div class="modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <h2 class="modal__title">Edit profile</h2>
+          <form class="modal__form">
+            <label for="profile-name-input" class="modal__label"
+              >Name
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="type your name"
+              />
+            </label>
+            <label for="profile-description-input" class="modal__label"
+              >Description
+              <input
+                id="profile-description-input"
+                type="text"
+                class="modal__input"
+                placeholder="Describe yourself"
+              />
+            </label>
+            <button type="button" class="modal__submit-btn">save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <h2 class="modal__title">New Post</h2>
+          <form class="modal__form">
+            <label for="card_image-input" class="modal__label"
+              >Image <link rel="stylesheet" href="" />
+              <input
+                id="car-image_input"
+                type="url"
+                class="modal__input"
+                placeholder="Place a link to the picture"
+              />
+            </label>
+            <label for="profile-description-input" class="modal__label"
+              >Caption
+              <input
+                id="profile-description-input"
+                type="text"
+                class="modal__input"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button type="button" class="modal__submit-btn">save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
