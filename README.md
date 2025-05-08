@@ -11,6 +11,7 @@ This project demonstrates responsive design meaning the elemenents displayed wil
 - HTML
 - CSS
 - Responsive design
+- Javascript
 
 ## Deployment
 
