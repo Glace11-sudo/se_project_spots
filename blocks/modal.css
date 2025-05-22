@@ -16,6 +16,10 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
+.modal_type_preview {
+  padding: 0 16px;
+}
+
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
@@ -32,16 +36,26 @@
   box-sizing: border-box;
 }
 .modal__close-btn {
-  background-image: url(../images/Group\ 27.svg);
+  background-image: url(../images/black.x.btn.svg);
   position: absolute;
   border: none;
-  background-color: white;
   top: 32px;
   right: 50px;
   width: 40px;
   height: 40px;
   opacity: 0.4;
   cursor: pointer;
+  background-color: inherit;
+}
+
+.modal__close-btn_type_preview {
+  background-image: url(../images/white.x.btn.svg);
+  top: 0;
+  bottom: -52.5px;
+  right: -48px;
+}
+.modal__close-btn_type_preview:hover {
+  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
@@ -95,15 +109,44 @@
 .modal__submit-btn:hover {
   opacity: 0.8;
 }
+.modal__image-container {
+  position: relative;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  border-radius: 8px;
+  background-color: black;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+}
 
 @media screen and (max-width: 627px) {
   .modal__container {
     padding: 22px 12px 12px;
   }
 
+  .modal__image {
+    max-width: unset;
+  }
+
   .modal__close-btn {
     top: 22px;
     right: 12px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
   }
 
   .modal__title {

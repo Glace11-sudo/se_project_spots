@@ -4,7 +4,7 @@ This project is an image sharing site.
 
 ## Description
 
-This project demonstrates responsive design meaning the elemenents displayed will adjust properly respective to the screen size. It specifically demonstrates correct element deminsions for mobile and desktop scren sizes.
+This project demonstrates responsive design meaning the elemenents displayed will adjust properly respective to the screen size. It specifically demonstrates correct element deminsions for mobile and desktop scren sizes. it also displays functionality with with opening, closing and submission of modals.
 
 ## tech Stack
 
