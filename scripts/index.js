@@ -138,7 +138,7 @@ function handleEditProfileSubmit(evt) {
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
-function NewPostForm (evt) {
+function handleNewPostFormSubmit (evt) {
     evt.preventDefault();
 
     const inputValues = {
@@ -149,10 +149,11 @@ function NewPostForm (evt) {
     cardsList.prepend(cardElement);
 
     closeModal(newPostModal);
-    
+    // empty the inputs
+    newPostForm.reset()
     };
 
-newPostForm.addEventListener("submit", NewPostForm);
+newPostForm.addEventListener("submit", handleNewPostFormSubmit);
 
 
 initialCards.forEach(function(item) {
