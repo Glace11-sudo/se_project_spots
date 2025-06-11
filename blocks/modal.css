@@ -92,6 +92,17 @@
   color: #212121;
 }
 
+.modal__error {
+  display: block;
+  margin-top: 8px;
+  color: red;
+  /* todo the correct font size */
+}
+
+/*.modal__error_visible {
+  visibility: visible;
+} */
+
 .modal__input::placeholder {
   color: #2121214d;
 }
@@ -109,6 +120,14 @@
 .modal__submit-btn:hover {
   opacity: 0.8;
 }
+
+.modal__submit-btn_disabled {
+  opacity: 0.5;
+}
+.modal__input_type_error {
+  border: 1px, solid, rgba(255, 0, 0, 0.6);
+}
+
 .modal__image-container {
   position: relative;
 }
