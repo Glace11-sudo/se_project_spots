@@ -99,44 +99,40 @@ function openModal(modal) {
   modal.classList.add("modal_is-opened");
   setModalEventListeners(modal);
 }
+// this should be the event handler that runs when a keypress is detected -- it checks if the key pressed is "escape", and close the modal it is
+function handleKeydown(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_is-opened");
+    closeModal(modal);
+  }
+}
+
+//this is the event handler that runs when clicking somewhere on a modal -- it checks if the place we clicked on is the overlay (ie: the modal itself), and close the modal if it is
+function handleClick(evt) {
+  const modal = document.querySelector(".modal_is-opened");
+  if (evt.target === modal) {
+    closeModal(modal);
+  }
+  console.log("key press");
+}
 
 function setModalEventListeners(modal) {
-  function handleKeydown(evt) {
-    if (evt.key === "Escape") {
-      closeModal(modal);
-      document.removeEventListener("keydown", handleKeydown);
-    }
-  }
-
-  function handleClick(evt) {
-    if (evt.target === modal) {
-      closeModal(modal);
-      modal.removeEventListener("click", handleClick);
-    }
-  }
-
   document.addEventListener("keydown", handleKeydown);
   modal.addEventListener("click", handleClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", function (evt) {
-    console.log(evt);
-    if (evt.key === "Escape") {
-      closeModal(modal);
-    }
-  });
-  modal.removeEventListener("click", function (evt) {
-    if (evt.target.classList.contains("modal")) {
-      closeModal(modal);
-    }
-  });
+  document.removeEventListener("keydown", handleKeydown);
 }
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editProfileForm, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
   openModal(editProfileModal);
 });
 
