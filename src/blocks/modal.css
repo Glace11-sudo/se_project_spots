@@ -35,12 +35,15 @@
   position: relative;
   box-sizing: border-box;
 }
+.modal__container-delete {
+  max-width: 630px;
+  height: 172px;
+}
 .modal__close-btn {
   background-image: url(../images/black.x.btn.svg);
   position: absolute;
   border: none;
-  top: 32px;
-  right: 50px;
+  right: 30px;
   width: 40px;
   height: 40px;
   opacity: 0.4;
@@ -62,9 +65,22 @@
   opacity: 1;
 }
 
+.modal__close-btn_delete-modal {
+  background-image: url(../images/white.x.btn.svg);
+  position: absolute;
+  border: none;
+  top: -4px;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  cursor: pointer;
+  background-color: initial;
+}
+
 .modal__title {
   margin: 0 0 32px;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 100%;
   font-weight: 500;
 }
@@ -72,6 +88,14 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+}
+
+.modal__form-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 18px, 32px;
 }
 
 .modal__label {
@@ -115,6 +139,44 @@
   border-radius: 8px;
   cursor: pointer;
   border: none;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.modal__cancel-btn {
+  max-width: 156px;
+  height: 52px;
+  padding: 18px 32px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  gap: 8px;
+  text-align: center;
+}
+
+.modal__cancel-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.modal__delete-btn {
+  max-width: 156px;
+  height: 52px;
+  padding: 18px 32px;
+  background-color: #ff6565;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  gap: 8px;
+}
+
+.modal__delete-btn:hover {
+  background-color: #ff3333;
+  color: #212121;
 }
 
 .modal__submit-btn:hover {
@@ -189,4 +251,11 @@
   .modal__submit-btn {
     max-width: none;
   }
+
+  .modal__container-delete {
+    display: flex;
+    flex-wrap: wrap;
+    text-overflow: ellipsis;
+  }
+  /* adjust the the buttons to display colum */
 }

@@ -20,14 +20,23 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('.//images/avatar.jpg')%>"
-            alt="Bessie Coleman"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%=require('.//images/pencil.icon-btn.svg')%>"
+                alt="pencil icon"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <img
+              src="<%=require('.//images/Rectangle 15.svg')%>"
+              alt="Bessie Coleman"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
-            <h1 class="profile__name">Bessie Coleman</h1>
-            <p class="profile__description">Civil Aviator</p>
+            <h1 class="profile__name">Placeholder Name</h1>
+            <p class="profile__description">Placeholder Description</p>
             <button type="button" class="profile__edit-btn">
               <img
                 src="<%=require('./images/pencil-buttom.svg')%>"
@@ -36,10 +45,8 @@
             </button>
           </div>
           <button type="button" class="profile__add-btn">
-            <img
-              src="<%=require('./images/Group%2026.svg')%>"
-              alt="Plus icon"
-            />New Post
+            <img src="<%=require('./images/plus.svg')%>" alt="Plus icon" />New
+            Post
           </button>
         </section>
         <section class="cards page__section">
@@ -47,7 +54,7 @@
             <template id="card-template">
               <li class="card">
                 <button class="card__delete-btn" type="button"></button>
-                <img class="card__image" src="<%=require('#')%>" alt="" />
+                <img class="card__image" alt="" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
                   <button
@@ -98,7 +105,7 @@
                 class="modal__error"
               ></span>
             </label>
-            <button type="submit" class="modal__submit-btn">save</button>
+            <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
@@ -113,7 +120,7 @@
           <h2 class="modal__title">New Post</h2>
           <form class="modal__form">
             <label for="card_image-input" class="modal__label"
-              >Image
+              >Image link
               <input
                 id="card_image-input"
                 type="url"
@@ -144,7 +151,7 @@
               class="modal__submit-btn modal__submit-btn_disabled"
               disabled
             >
-              save
+              Save
             </button>
           </form>
         </div>
@@ -158,9 +165,52 @@
             type="button"
             class="modal__close-btn modal__close-btn_type_preview"
           ></button>
-          <img src="<%=require('#')%>" alt="" class="modal__image" />
+          <img alt="" class="modal__image" />
           <p class="modal__caption">Golden Gate Bridge</p>
         </div>
+      </div>
+    </div>
+
+    <div class="modal" id="avatar-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close-btn"
+          aria-label="modal close"
+        ></button>
+        <h2 class="modal__title">Edit avatar</h2>
+        <form class="modal__form" id="edit-avatar-form">
+          <label for="profile-avatar-input" class="modal__label"
+            >Profile Picture
+            <input
+              id="profile-avatar-input"
+              type="url"
+              name="avatar"
+              class="modal__input"
+              placeholder="Paste the link to image"
+              required
+            />
+            <span id="profile-avatar-input-error" class="modal__error"></span>
+          </label>
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="delete-modal">
+      <div class="modal__container modal__container-delete">
+        <button
+          type="button"
+          class="modal__close-btn modal__close-btn_delete-modal"
+          aria-label="modal close"
+        ></button>
+        <h2 class="modal__title">
+          Are you sure you want to delete this image?
+        </h2>
+        <form class="modal__form-delete" id="delete-form">
+          <button type="submit" class="modal__delete-btn">Delete</button>
+          <button type="button" class="modal__cancel-btn">Cancel</button>
+        </form>
       </div>
     </div>
   </body>
