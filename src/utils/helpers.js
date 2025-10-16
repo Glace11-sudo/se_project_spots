@@ -6,10 +6,8 @@ export function setButtonText(
 ) {
   if (isLoading) {
     modal__submitbtn.textContent = loadingText;
-    // set the loading text
   } else {
     modal__submitbtn.textContent = defaultText;
-    //set the default text
   }
 }
 export function setDeleteText(
@@ -19,10 +17,8 @@ export function setDeleteText(
   loadingText = "Deleting..."
 ) {
   if (isDeleting) {
-    //set the deleting text
     modal__deleteBtn.textContent = loadingText;
   } else {
     modal__deleteBtn.textContent = defaultText;
-    //set default text
   }
 }

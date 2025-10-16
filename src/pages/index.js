@@ -3,7 +3,6 @@ import { enableValidation, config } from "../scripts/validation.js";
 import Api from "../utils/Api.js";
 import { setButtonText } from "../utils/helpers.js";
 import { setDeleteText } from "../utils/helpers.js";
-import { data, error } from "jquery";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -92,8 +91,9 @@ function getCardElement(data) {
   if (data.isLiked) {
     cardLikeBtnEl.classList.add("card__like-btn_active");
   }
-  const isLiked = cardLikeBtnEl.classList.contains("card__like-btn_active");
   cardLikeBtnEl.addEventListener("click", () => {
+    const isLiked = cardLikeBtnEl.classList.contains("card__like-btn_active");
+
     api
       .changeLikeStatus(data._id, isLiked)
       .then(() => {
@@ -241,11 +241,11 @@ function handleEditProfileSubmit(evt) {
         editProfileNameInput,
         editProfileDescriptionInput,
       ]);
+      closeModal(editProfileModal);
     })
     .catch(console.error)
     .finally(() => {
       setButtonText(modal__submitBtn, false, "Save", "Saving...");
-      closeModal(editProfileModal);
     });
 }
 
@@ -289,18 +289,19 @@ function handleNewPostFormSubmit(evt) {
 
   api
     .postCards(inputValues)
-    .then(() => {
-      const cardElement = getCardElement(inputValues);
+    .then((data) => {
+      const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
+      resetValidation(newPostModal, [newPostLinkInput, newPostCaptionInput]);
+
+      closeModal(newPostModal);
     })
     .catch(console.error)
     .finally(() => {
       setButtonText(modal__submitBtn, false, "Save", "Saving...");
-      closeModal(newPostModal);
     });
 
   newPostForm.reset();
-  resetValidation(newPostModal, [newPostLinkInput, newPostCaptionInput]);
 }
 
 newPostForm.addEventListener("submit", handleNewPostFormSubmit);
